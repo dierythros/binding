@@ -23,7 +23,7 @@ function Binding.new(object, tag)
 	return self
 end
 
-function Binding:destroy()
+function Binding:Destroy()
 	self._added:Disconnect()
 	self._removed:Disconnect()
 	for _, object in self._objects do
