@@ -9,7 +9,7 @@ Binding.__index = Binding
 
 local function shouldBind(instance)
   -- You can have your own restrictions on what objects should be bound here.
-  -- There are simply the ones I use, module will work without them.
+  -- These are simply the ones I use, module will work without them.
 	local ownerId = instance:GetAttribute("OwnerId")
 	local effect = instance:GetAttribute("Effect")
 	local owner = (SERVER and not ownerId) or (ownerId == Players.LocalPlayer.UserId)
