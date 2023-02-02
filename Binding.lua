@@ -1,23 +1,11 @@
 local CollectionService = game:GetService("CollectionService")
-local RunService = game:GetService("RunService")
-local Players = game:GetService("Players")
-
-local SERVER = RunService:IsServer()
 
 local Binding = {}
 Binding.__index = Binding
 
 local function shouldBind(instance)
-  -- You can have your own restrictions on what objects should be bound here.
-  -- These are simply the ones I use, module will work without them.
-	local ownerId = instance:GetAttribute("OwnerId")
-	local effect = instance:GetAttribute("Effect")
-	local owner = (SERVER and not ownerId) or (ownerId == Players.LocalPlayer.UserId)
-	local remote = instance:GetAttribute("Remote")
-	local private = instance:GetAttribute("Private")
-	if (effect and SERVER) or (remote and owner) or (private and not owner) then
-		return false
-	end
+	-- You can have your own restrictions on what objects should be bound here.
+	-- return false if you want an object to not be bound.
 	return true
 end
 
