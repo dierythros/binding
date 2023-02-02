@@ -27,7 +27,7 @@ function Binding:Destroy()
 	self._added:Disconnect()
 	self._removed:Disconnect()
 	for _, object in self._objects do
-		object:destroy()
+		object:Destroy()
 	end
 	setmetatable(self, nil)
 	table.clear(self)
