@@ -5,7 +5,7 @@ Binding.__index = Binding
 
 local function shouldBind(instance)
 	-- You can have your own restrictions on what objects should be bound here.
-	-- return false if you want an object to not be bound.
+	-- Return false if you want an object to not be bound.
 	return true
 end
 
