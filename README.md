@@ -7,4 +7,4 @@ local DamageObject = require(game.ReplicatedStorage.DamageObject)
 
 local bind = Binding.new(DamageObject, "Damage")
 
-bind:destroy()
+bind:Destroy()
