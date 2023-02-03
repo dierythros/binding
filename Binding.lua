@@ -11,15 +11,15 @@ end
 
 function Binding.new(object, tag)
 	local self = setmetatable({}, Binding)
-	self._objects = {}
+	self.objects = {}
 	self._added = CollectionService:GetInstanceAddedSignal(tag):Connect(function(instance)
 		if not shouldBind(instance) then return end
-		self._objects[instance] = object.new(instance)
+		self.objects[instance] = object.new(instance)
 	end)
 	self._removed = CollectionService:GetInstanceRemovedSignal(tag):Connect(function(instance)
-		if not self._objects[instance] then return end
-		self._objects[instance]:Destroy()
-		self._objects[instance] = nil
+		if not self.objects[instance] then return end
+		self.objects[instance]:Destroy()
+		self.objects[instance] = nil
 	end)
 	return self
 end
@@ -27,7 +27,7 @@ end
 function Binding:Destroy()
 	self._added:Disconnect()
 	self._removed:Disconnect()
-	for _, object in self._objects do
+	for _, object in self.objects do
 		object:Destroy()
 	end
 	setmetatable(self, nil)
