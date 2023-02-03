@@ -7,9 +7,9 @@ local Binding = require((game.ReplicatedStorage.Binding)
 
 local bind = Binding.new(AbilityClass, "Ability")  
 
-bind:Destroy()  
-
 local ability = bind.objects[abilityInstance]  
+
+bind:Destroy()  
 
 Watch this to see benefits of using this pattern:
 https://youtu.be/Db3LooLQM1Q?t=1866
