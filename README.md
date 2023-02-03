@@ -2,12 +2,14 @@
  Roblox object oriented binder module.
 
 Usage:
+local Ability = require(game.ReplicatedStorage.AbilityClass)
 local Binding = require((game.ReplicatedStorage.Binding)
-local DamageObject = require(game.ReplicatedStorage.DamageObject)
 
-local bind = Binding.new(DamageObject, "Damage")
+local bind = Binding.new(AbilityClass, "Ability")
 
 bind:Destroy()
+
+local ability = bind.objects[abilityInstance]
 
 Watch this to see benefits of using this pattern:
 https://youtu.be/Db3LooLQM1Q?t=1866
