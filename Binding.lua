@@ -1,3 +1,5 @@
+-- Dierythros 2023
+
 local CollectionService = game:GetService("CollectionService")
 
 local Binding = {}
