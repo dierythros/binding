@@ -19,6 +19,7 @@ function Binding.new(object, tag)
 	self._removed = CollectionService:GetInstanceRemovedSignal(tag):Connect(function(instance)
 		if not self._objects[instance] then return end
 		self._objects[instance]:Destroy()
+		self._objects[instance] = nil
 	end)
 	return self
 end
