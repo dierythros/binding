@@ -12,9 +12,10 @@ function Binding.new(object, tag, predicate)
 		end
 	end)
 	self._removed = CollectionService:GetInstanceRemovedSignal(tag):Connect(function(instance)
-		if not self.objects[instance] then return end
-		self.objects[instance]:destroy()
-		self.objects[instance] = nil
+		if self.objects[instance] then
+			self.objects[instance]:destroy()
+			self.objects[instance] = nil
+		end
 	end)
 	return self
 end
