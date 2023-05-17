@@ -5,11 +5,11 @@ Usage:
 local Ability = require(game.ReplicatedStorage.AbilityClass)  
 local Binding = require((game.ReplicatedStorage.Binding)  
 
-local bind = Binding.new(AbilityClass, "Ability")  
+local bind = Binding.new(AbilityClass, "Ability", function() return true end)  
 
 local ability = bind.objects[abilityInstance]  
 
-bind:Destroy()  
+bind:destroy()
 
 Watch this to see benefits of using this pattern:
 https://youtu.be/Db3LooLQM1Q?t=1866
